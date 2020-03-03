@@ -1,26 +1,34 @@
 import React from 'react';
+import {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {Body, Body2} from './components/Body.js';
+import {Header, Header2} from './components/Header.js';
+import { Counter } from './components/counter';
+
+
+
+
+
+class App extends Component{
+
+  add = (a, b)=> a+b;
+
+  render(){
+		
+
+    return(
+      <div className="app">
+        <Header myFunc={this.add} />
+
+		<hr/>
+		
+		<Counter></Counter>
+		
+      </div>
+    );
+  }
 }
 
 export default App;
